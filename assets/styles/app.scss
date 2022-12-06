@@ -1,0 +1,74 @@
+@import "~bootstrap/scss/bootstrap";
+
+$btn-danger-outline: #ff0000;
+
+body {
+    background-color: rgb(243, 243, 243);
+
+    .proceed-block {
+        margin-top: 40vh;
+    }
+}
+
+.calculator-block {
+    .input-screen
+    {
+        background-color: rgb(195, 247, 247);
+        font-size: 2vw;
+    }
+
+    .calculator-area
+    {
+        width: 40%;
+        height: 90%;
+        padding: 3%;
+        margin-left: 200px;
+        background-color: #dfdddd;
+    }
+
+    .history-screen
+    {
+        background-color: #c7c7c7;
+        font-size: 1.6vw;
+        max-width: 50%;
+    }
+
+    .row
+    {
+        margin: 1%;
+        padding: 1%;
+    }
+
+    .btn
+    {
+        margin: 1%;
+        font-size: large;
+    }
+
+    .reset
+    {
+        font-size: 15px;
+        font-weight:bolder;
+    }
+
+    .mod
+    {
+        font-size: medium;
+        font-weight:bolder;
+    }
+
+    .outer {
+        margin: 0;
+        padding: 0;
+    }
+
+    .results-area {
+        ul {
+            list-style-type: decimal;
+            width: 60%;
+            text-align: center;
+            margin-top: 10%;
+            margin-left: 17%;
+        }
+    }
+}

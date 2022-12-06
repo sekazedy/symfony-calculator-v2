@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/png" href="calculator.png">
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div class="container text-center proceed-block">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1>Hello! You are looking at the Calculator app homepage!</h2>
+                        <h3>To proceed to the Calculator view, press the button 'Proceed'</h3>
+                        <button type="button" class="btn btn-success mt-5" onclick="location.href='{{ path('calculator') }}'">
+                            Proceed -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </body>
+</html>

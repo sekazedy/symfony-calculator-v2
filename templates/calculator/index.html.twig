@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container text-center calculator-block">
+        <div class="row align-items-center">
+            <div class="col">
+                <button type="button" class="btn btn-primary" onclick="location.href='{{ path('home') }}'">
+                    <-- Go back to homepage
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="calculator-area justify-content-center border border-primary text-center col-9">
+                <div class="history col-12">
+                    <input type="text" class="border border-primary form-control-sm text-center history-screen" disabled/>
+                </div>
+                <div class="row">
+                    <input type="text" class="input-screen border border-primary form-control-lg col-9 text-end" disabled/>
+                    <button type="button" class="btn btn-outline-danger reset col" value="reset">RESET</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary col" value="7">7</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="8">8</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="9">9</button>
+                    <button type="button" class="btn btn-outline-primary col" value="+">+</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary col" value="4">4</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="5">5</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="6">6</button>
+                    <button type="button" class="btn btn-outline-primary col" value="-">-</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary col" value="1">1</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="2">2</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="3">3</button>
+                    <button type="button" class="btn btn-outline-primary col" value="x">x</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-secondary col">&nbsp;</button>
+                    <button type="button" class="btn btn-outline-secondary col" value="0">0</button>
+                    <button type="button" class="btn btn-outline-secondary col" value=".">.</button>
+                    <button type="button" class="btn btn-outline-primary col" value="/">&divide;</button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn btn-outline-success col-8" value="=">=</button>
+                    <button type="button" class="btn btn-outline-primary col-3" value="+-">+/-</button>
+                </div>
+            </div>
+            <div class="results-area col-3">
+                <button type="button" class="btn btn-primary" id="load-last-results">Load last 5 results</button>
+                {% if results is empty %}
+                    <p>No results have been saved yet</p>
+                {% else %}
+                    <ul>
+                        {% for result in results %}
+                            <li>{{ result.getCalcResult() }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}
